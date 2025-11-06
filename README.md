@@ -1,99 +1,98 @@
-# 🧪 Boas Práticas– Automação com Cypress
+# 🧪 Testes Automatizados com Cypress
 
-Projeto de automação de testes desenvolvido com **Cypress**.  
-O foco foi a simulação de **compras em e-commerce**, uma área sensível que requer revisões e monitoramento constantes.
-
-Devido à instabilidade do site original do desafio, os testes foram executados em:  
-👉 (https://www.automationexercise.com)
+## 📋 Descrição
+Projeto de automação de testes desenvolvido com **Cypress**
 
 ---
 
-## 📋 Pré-requisitos
+## 🧰 Pré-requisitos
 
-Antes de rodar o projeto, instale:
+Antes de começar, é necessário instalar as seguintes ferramentas no seu computador:
 
-1. **Node.js** (versão LTS 18 ou superior)  
-   🔗 [https://nodejs.org/en/download](https://nodejs.org/en/download)
+| Ferramenta | Versão Recomendada | Descrição |
+|-------------|-------------------|------------|
+| [Node.js](https://nodejs.org/) | ≥ 18.x | Ambiente de execução JavaScript necessário para rodar o Cypress. |
+| [VS Code](https://code.visualstudio.com/) | Última | IDE recomendada para editar e executar o projeto. |
+| [Git](https://git-scm.com/downloads) | ≥ 2.x | Controle de versão para clonar e versionar o projeto. |
+| [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable) *(opcional)* | ≥ 1.22 | Gerenciador de pacotes alternativo ao npm. |
 
-   Verifique se está instalado:
-   ```bash
-   node -v
-   npm -v
-   ```
-
-2. **Yarn** – gerenciador de pacotes  
-   ```bash
-   npm install    ```
-
-3. **Visual Studio Code**  
-   🔗 [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-
-   Extensões sugeridas:
-   - 🌱 Cypress Snippets  
-   - 💡 ESLint  
-   - 🧩 Prettier
+> 💡 **Dica:** após instalar o Node.js, o npm será instalado automaticamente.
 
 ---
 
-## ⚙️ Instalação do Projeto
+## ⚙️ Verificando as instalações
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/AlexCosta041/desafio-cypress-QA.git
-   ```
+Execute os comandos abaixo no terminal (PowerShell, Git Bash ou VS Code Terminal):
 
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-
----
-
-## 🚀 Execução dos Testes
-
-### 🔹 Modo interativo (com interface):
 ```bash
- npx cypress open
+node -v
+npm -v
+git --version
 ```
+
 
 
 ---
 
-## 🧩 Estrutura do Projeto
+## 🚀 Clonando o repositório
 
-```
-boas-praticas/
-├── cypress/
-│   ├── e2e/
-│   │   └── compras.cy.js         # Cenários de teste do fluxo de compras
-│   ├── fixtures/                 # Massa de dados (usuários, produtos etc.)
-│   ├── support/
-│   │   ├── commands.js           # Comandos customizados
-│   │   └── e2e.js                # Configurações globais
-├── package.json                  # Configuração do projeto
-├── cypress.config.js             # Configurações do Cypress
-└── README.md                     # Este arquivo
+Abra o terminal e execute:
+
+```bash
+git clone https://github.com/AlexCosta041/desafio-api-QA.git
+
 ```
 
 ---
 
-## 🧠 Tecnologias e Dependências
+## 📦 Instalando as dependências
 
-- [Cypress ^12.8.1](https://www.cypress.io/) – Framework principal de automação  
-- [@faker-js/faker ^7.6.0](https://fakerjs.dev/) – Geração de dados aleatórios  
-- **Yarn** – Gerenciador de dependências  
-- **Mocha / Chai** – Frameworks nativos de assertions do Cypress  
-
----
-
-## 🛒 Site Utilizado
-
-**URL Base:** [https://www.automationexercise.com](https://www.automationexercise.com)
-
-> Este site foi utilizado por ser um ambiente estável para automação de testes de e-commerce, cobrindo fluxos de **cadastro, login, busca e compra de produtos**.
+Se usar **npm**:
+```bash
+npm install
+```
 
 ---
 
-## 📄 Licença
+## 🧠 Dependências principais
+
+| Pacote | Versão | Descrição |
+|---------|---------|-----------|
+| [Cypress](https://www.cypress.io/) | ^12.8.1 | Framework principal de testes. |
+| [@faker-js/faker](https://github.com/faker-js/faker) | ^7.6.0 | Geração de dados dinâmicos (usuários, e-mails, etc). |
+
+---
+
+## ▶️ Executando os testes
+
+### Modo interativo (abrindo o Cypress GUI)
+```bash
+npm run cy:open
+```
+
+### Modo headless (execução em linha de comando)
+```bash
+npm test
+```
+ou
+```bash
+yarn test
+```
+
+
+## 💡 Dica final
+
+Se, ao baixar o projeto, o comando `cypress` não for reconhecido, execute:
+```bash
+npm install
+```
+
+Isso garante que todas as dependências sejam reinstaladas corretamente antes de executar os testes.
+
+---
+
+## 👨‍💻 Autor
+
+**Alex**  
   
-Desenvolvido por **Alex** .
+
