@@ -1,9 +1,18 @@
-const { defineConfig } = require('cypress')
+import { defineConfig } from 'cypress';
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
-    baseUrl:'https://www.automationexercise.com/'
-  },
-  
-  video: false,
-})
+    baseUrl: 'http://lojaebac.ebaconline.art.br/',
+    setupNodeEvents(on) {
+      on('before:browser:launch', (browser, launchOptions) => {
+        if (browser.name === 'chrome') {
+          launchOptions.args.push(
+            '--disable-features=PasswordManager',
+            '--disable-password-manager-reauthentication'
+          );
+        }
+        return launchOptions;
+      });
+    }
+  }
+});

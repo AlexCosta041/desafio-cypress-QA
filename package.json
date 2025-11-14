@@ -1,20 +1,20 @@
 {
-  "name": "boas-praticas",
+  "name": "cypress",
   "version": "1.0.0",
-  "description": "Boas praticas minsait",
+  "description": "Treinamento Cypress",
+  "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "cy:open": "cypress open"
+    "cy:run": "npx cypress run --browser=chrome --headed --spec 'cypress/e2e/*.cy.js' --reporter mocha-allure-reporter",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   },
-  "keywords": [
-    "cypress.io",
-    "Capacitacao",
-    ""
-  ],
-  "author": "Alex",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0",
-    "cypress": "^12.8.1"
+    "@faker-js/faker": "^9.9.0",
+    "allure-commandline": "^2.34.1",
+    "allure-mocha": "^3.4.1",
+    "cypress": "^14.0.0",
+    "mocha-allure-reporter": "^1.4.0"
   }
 }

@@ -1,98 +1,89 @@
-# 🧪 Testes Automatizados com Cypress
+# Cypress E2E Testing Project
 
-## 📋 Descrição
-Projeto de automação de testes desenvolvido com **Cypress**
+Este projeto contém testes end-to-end (E2E) automatizados para uma aplicação web usando Cypress. Os testes cobrem funcionalidades essenciais como cadastro de usuários, login, compras e logout.
 
----
-
-## 🧰 Pré-requisitos
-
-Antes de começar, é necessário instalar as seguintes ferramentas no seu computador:
-
-| Ferramenta | Versão Recomendada | Descrição |
-|-------------|-------------------|------------|
-| [Node.js](https://nodejs.org/) | ≥ 18.x | Ambiente de execução JavaScript necessário para rodar o Cypress. |
-| [VS Code](https://code.visualstudio.com/) | Última | IDE recomendada para editar e executar o projeto. |
-| [Git](https://git-scm.com/downloads) | ≥ 2.x | Controle de versão para clonar e versionar o projeto. |
-| [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable) *(opcional)* | ≥ 1.22 | Gerenciador de pacotes alternativo ao npm. |
-
-> 💡 **Dica:** após instalar o Node.js, o npm será instalado automaticamente.
-
----
-
-## ⚙️ Verificando as instalações
-
-Execute os comandos abaixo no terminal (PowerShell, Git Bash ou VS Code Terminal):
-
-```bash
-node -v
-npm -v
-git --version
-```
-
-
-
----
-
-## 🚀 Clonando o repositório
-
-Abra o terminal e execute:
-
-```bash
-git clone https://github.com/AlexCosta041/desafio-api-QA.git
+## 📋 Estrutura do Projeto
 
 ```
+cypress/
+├── e2e/
+│   ├── Cadastro.cy.js      # Testes de cadastro de usuários
+│   ├── Login.cy.js         # Testes de autenticação
+│   ├── Compras.cy.js       # Testes de fluxo de compras
+│   └── logout.cy.js        # Testes de logout
+├── fixtures/
+│   └── example.json        # Dados de teste estáticos
+├── support/
+│   ├── commands.js         # Comandos customizados do Cypress
+│   └── e2e.js             # Configurações de suporte E2E
+└── downloads/             # Arquivos baixados durante testes
 
----
+cypress.config.js          # Configuração principal do Cypress
+package.json              # Dependências e scripts do projeto
+```
 
-## 📦 Instalando as dependências
+## 🛠️ Tecnologias Utilizadas
 
-Se usar **npm**:
+- **Cypress 14.0.0** - Framework de testes E2E
+- **JavaScript** - Linguagem de programação
+- **Node.js** - Ambiente de execução
+- **Faker.js** - Geração de dados de teste
+- **Allure** - Relatórios de teste
+
+## 📦 Instalação
+
+1. Clone o repositório:
+```bash
+git clone <url-do-repositorio>
+cd cypress
+```
+
+2. Instale as dependências:
 ```bash
 npm install
 ```
 
+## ▶️ Executando os Testes
+
+### Modo Interativo (Interface Gráfica)
+```bash
+npx cypress open
+```
+
+### Modo Headless (Linha de Comando)
+```bash
+npm run cy:run
+```
+
+### Executar Teste Específico
+```bash
+npx cypress run --spec "cypress/e2e/Cadastro.cy.js"
+```
+
+### Com Relatórios Allure
+```bash
+npm run cy:run        # Executa testes
+npm run report:allure # Gera relatório
+```
+
+## 📊 Relatórios
+
+O projeto gera relatórios de teste usando Allure:
+
+- Relatórios salvos em `allure-report/`
+- Resultados brutos em `allure-results/`
+
+Para visualizar relatórios:
+```bash
+npm run report:allure
+```
+
+
+##  Suporte
+
+Para dúvidas ou problemas:
+- Abra uma issue no GitHub
+- Consulte a documentação do Cypress
+- Verifique os logs de erro nos relatórios
+
 ---
-
-## 🧠 Dependências principais
-
-| Pacote | Versão | Descrição |
-|---------|---------|-----------|
-| [Cypress](https://www.cypress.io/) | ^12.8.1 | Framework principal de testes. |
-| [@faker-js/faker](https://github.com/faker-js/faker) | ^7.6.0 | Geração de dados dinâmicos (usuários, e-mails, etc). |
-
----
-
-## ▶️ Executando os testes
-
-### Modo interativo (abrindo o Cypress GUI)
-```bash
-npm run cy:open
-```
-
-### Modo headless (execução em linha de comando)
-```bash
-npm test
-```
-ou
-```bash
-yarn test
-```
-
-
-## 💡 Dica final
-
-Se, ao baixar o projeto, o comando `cypress` não for reconhecido, execute:
-```bash
-npm install
-```
-
-Isso garante que todas as dependências sejam reinstaladas corretamente antes de executar os testes.
-
----
-
-## 👨‍💻 Autor
-
-**Alex**  
-  
-
